@@ -50,8 +50,9 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  const cevre = 2*pi*yaricap;
+  return cevre;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,9 +65,12 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap,pi) {
+  const pi = Math.PI
+  const alan = pi*Math.pow(yaricap,2);
+  return alan;
 }
+
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -89,37 +93,71 @@ function CemberinAlani(/* kodlar buraya */) {
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
+/*let ucetambolunenler,
   enkucuk,
   enbuyuk,
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar,
   siralisayilar,
   tekraredensayilar;
+  */
 
 // 3a çözümü
 
-/* kodlar buraya */
+let enbuyuk = 0;
+let enkucuk = 0;
+for(let i=0; i<sayilar.length ; i++) {
+  if (sayilar[i] < enkucuk) {
+    enkucuk=sayilar[i];
+  } 
+  if (sayilar[i] > enbuyuk) {
+    enbuyuk = sayilar[i]
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+let ucetambolunenler =[];
+sayilar.forEach(function(sayi) {
+   if (sayi%3===0) {
+    ucetambolunenler.push(sayi);
+   }
+});
 
 // 3c çözümü:
 
-/* kodlar buraya */
+let uceTambolunenlerToplami = ucetambolunenler.reduce(function(toplam,sayi) {
+  return toplam+sayi
+})
 
 // 3d çözümü
 
-/* kodlar buraya */
+let besyuzdenkucuksayilar = sayilar.filter(function(sayi) {
+  return sayi < 500;
+})
 
 // 3e çözümü
 
-/* kodlar buraya */
+let siralisayilar = besyuzdenkucuksayilar.sort(function(a,b) {
+   return a-b
+})
+
 
 // 3f çözümü
 
-/* kodlar buraya */
+/*let tekraredensayilar = [];
+let tekrarlar ={
+  sayi:sayi,
+  tekrar:tekrar,
+}
+for (let i =0 ; i<sayilar.length; i++) {
+  for (let j=0 ; j<sayilar.length; i++) {
+     if (i===j){}
+
+  }
+
+}
+*/
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
